@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 class Locators():
     PERSONAL_ACCOUNT = (By.XPATH, '//p[text()="Личный Кабинет"]')# Кнопка "Личный Кабинет"
     LOGIN_IN_ACCOUNT = (By.XPATH, '//button[text()="Войти в аккаунт"]')# Кнопка "Войти в аккаунт"
-    LOGIN_EMAIL_INPUT = (By.XPATH, '//input[@name="Email"]')# Инпут для логина на странице входа
-    LOGIN_PASSWORD_INPUT = (By.XPATH, '//input[@type="password"]')# Инпут для пароля на странице входа
+    LOGIN_EMAIL_INPUT = (By.XPATH, "//input[@type='text']")  # Инпут для логина на странице входа
+    LOGIN_PASSWORD_INPUT = (By.XPATH, ".//input[@type='password']")  # Инпут для пароля на странице входа
     LOGIN_BUTTON = (By.XPATH, '//button[contains(text(), "Войти")]')# Кнопка "Войти" на странице входа
     LOGOUT_BUTTON = (By.XPATH, '//button[text()="Выход"]')# Кнопка "Выйти" в Личном Кабинете
     REGISTRATION_BUTTON_ON_LOGIN_PAGE = (By.XPATH, '//a[contains(text(), "Зарегистрироваться")]')# Кнопка "Зарегистрироваться" на странице входа

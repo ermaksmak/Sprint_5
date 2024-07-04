@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7bb3d5-ff06-4ec7-9b35-d0b7922f2c43" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Sprint_5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sprint_5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/test/test_bread_crumbs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/test/test_check_login.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/test/test_constructor_navigation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/test/test_login_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/test/test_logout.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/test/test_registration_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_bread_crumbs.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_bread_crumbs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_check_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_check_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_constructor_navigation.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_constructor_navigation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_login_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_logout.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_logout.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_registration_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_registration_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +57,7 @@
     "Python.conftest.executor": "Run",
     "Python.test_registration_page.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "Merging develop",
     "ignore.virus.scanning.warn.message": "true",
     "ignore_missing_gitignore": "true",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
