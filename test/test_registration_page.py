@@ -1,38 +1,48 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+import conftest
+import constants
 from locators import Locators
 from faker import Faker
 
 
 class TestStellarBurgers:
     fake = Faker()
+    def fake_password(self):
+        return self.fake.password(length=6)
+    def fake_email(self):
+        return self.fake.email()
+
     def test_registration_new_user(self, driver):
-        email = self.fake.email()
-        password = self.fake.password(length=6)
-        WebDriverWait(driver, 3).until(EC.presence_of_element_located((Locators.LOGIN_IN_ACCOUNT)))
+        email = self.fake_email()
+        password = self.fake_password()
+        conftest.wait_for_element_located(driver, time=3, locator=Locators.LOGIN_IN_ACCOUNT, condition=EC.presence_of_element_located)
         driver.find_element(*Locators.LOGIN_IN_ACCOUNT).click()
-        WebDriverWait(driver, 3).until(EC.presence_of_element_located((Locators.REGISTRATION_BUTTON_ON_LOGIN_PAGE)))
+        conftest.wait_for_element_located(driver, time=3, locator=Locators.REGISTRATION_BUTTON_ON_LOGIN_PAGE, condition=EC.presence_of_element_located)
         driver.find_element(*Locators.REGISTRATION_BUTTON_ON_LOGIN_PAGE).click()
-        driver.find_element(*Locators.REGISTRATION_NAME_INPUT).send_keys("Тестов")
+        driver.find_element(*Locators.REGISTRATION_NAME_INPUT).send_keys(email+password)
         driver.find_element(*Locators.REGISTRATION_EMAIL_INPUT).send_keys(email)
         driver.find_element(*Locators.REGISTRATION_PASSWORD_INPUT).send_keys(password)
         driver.find_element(*Locators.REGISTRATION_BUTTON).click()
-        WebDriverWait(driver, 7).until(EC.visibility_of_element_located((Locators.LOGIN_BUTTON)))
+        conftest.wait_for_element_located(driver, time=7, locator=Locators.LOGIN_EMAIL_INPUT, condition=EC.presence_of_element_located)
         driver.find_element(*Locators.LOGIN_EMAIL_INPUT).send_keys(email)
         driver.find_element(*Locators.LOGIN_PASSWORD_INPUT).send_keys(password)
         driver.find_element(*Locators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(Locators.PERSONAL_ACCOUNT))
+        conftest.wait_for_element_located(driver, time=10, locator=Locators.PERSONAL_ACCOUNT, condition=EC.element_to_be_clickable)
         driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
-        assert WebDriverWait(driver, 17).until(EC.visibility_of_element_located(Locators.LOGOUT_BUTTON))
+        assert conftest.wait_for_element_located(driver, time=17, locator=Locators.LOGOUT_BUTTON, condition=EC.visibility_of_element_located)
+
+
 
     def test_registration_invalid_password(self, driver):
-        WebDriverWait(driver, 3).until(EC.presence_of_element_located((Locators.LOGIN_IN_ACCOUNT)))
+        conftest.wait_for_element_located(driver, time=3, locator=Locators.LOGIN_IN_ACCOUNT, condition=EC.presence_of_element_located)
         driver.find_element(*Locators.LOGIN_IN_ACCOUNT).click()
-        WebDriverWait(driver, 3).until(EC.presence_of_element_located((Locators.REGISTRATION_BUTTON_ON_LOGIN_PAGE)))
+        conftest.wait_for_element_located(driver, time=3, locator=Locators.REGISTRATION_BUTTON_ON_LOGIN_PAGE, condition=EC.presence_of_element_located)
         driver.find_element(*Locators.REGISTRATION_BUTTON_ON_LOGIN_PAGE).click()
-        driver.find_element(*Locators.REGISTRATION_NAME_INPUT).send_keys('Елизавета')
-        driver.find_element(*Locators.REGISTRATION_EMAIL_INPUT).send_keys('elizavetavinogradova10562@yandex.ru')
+        driver.find_element(*Locators.REGISTRATION_NAME_INPUT).send_keys(constants.NAME_FOR_REGISTRATION)
+        driver.find_element(*Locators.REGISTRATION_EMAIL_INPUT).send_keys(constants.EMAIL_FOR_LOGIN)
         driver.find_element(*Locators.REGISTRATION_PASSWORD_INPUT).send_keys('12345')
-        WebDriverWait(driver, 3).until(EC.presence_of_element_located((Locators.REGISTRATION_BUTTON)))
+        conftest.wait_for_element_located(driver, time=3, locator=Locators.REGISTRATION_BUTTON, condition=EC.presence_of_element_located)
         driver.find_element(*Locators.REGISTRATION_BUTTON).click()
-        assert WebDriverWait(driver, 17).until(EC.visibility_of_element_located(Locators.ERROR_MESSAGE))
+        assert conftest.wait_for_element_located(driver, time=17, locator=Locators.ERROR_MESSAGE, condition=EC.visibility_of_element_located)

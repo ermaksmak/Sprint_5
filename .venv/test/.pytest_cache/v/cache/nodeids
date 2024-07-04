@@ -1,6 +1,0 @@
-[
-  "test_bread_crumbs.py::TestStellarBurgers::test_transition_through_constructor",
-  "test_bread_crumbs.py::TestStellarBurgers::test_transition_through_favorites",
-  "test_bread_crumbs.py::TestStellarBurgers::test_transition_through_logo",
-  "test_check_login.py::TestStellarBurgers::test_login"
-]

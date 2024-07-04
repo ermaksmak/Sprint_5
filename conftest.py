@@ -21,9 +21,13 @@ def driver():
 def logged_user(driver):
     driver.get(constants.LOGIN_PAGE)
     WebDriverWait(driver, 3).until(EC.element_to_be_clickable((Locators.LOGIN_EMAIL_INPUT)))
-    driver.find_element(*Locators.LOGIN_EMAIL_INPUT).send_keys('ivanermakov10123@yandex.ru')
-    driver.find_element(*Locators.LOGIN_PASSWORD_INPUT).send_keys('Utauru5454')
+    driver.find_element(*Locators.LOGIN_EMAIL_INPUT).send_keys(constants.EMAIL_FOR_LOGIN)
+    driver.find_element(*Locators.LOGIN_PASSWORD_INPUT).send_keys(constants.PASSWORD_FOR_LOGIN)
     driver.find_element(*Locators.LOGIN_BUTTON).click()
     WebDriverWait(driver, 3).until(EC.element_to_be_clickable((Locators.PERSONAL_ACCOUNT)))
     driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
     return driver
+
+
+def wait_for_element_located(driver, locator, time, condition):
+        return WebDriverWait(driver, time).until(condition(locator))
